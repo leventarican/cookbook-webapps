@@ -18,7 +18,25 @@ public class PingResource {
 
     @GET
     public String ping() {
-        return this.message + " Jakarta EE with MicroProfile 2+!";
+//        int a = 100000000;
+//        while(a > 0) {
+//            a--;
+//            Foobar f = new Foobar();
+//            f.foo();
+//        }
+        return this.message + " Jakarta EE with MicroProfile";
     }
-
+    
+    class Foobar{
+        int a = 2000000;
+        int b = 1;
+        Foobar() {
+            while(a > 0) {
+                a -= b;
+            }
+        }
+        void foo() {
+            ;
+        }
+    }
 }

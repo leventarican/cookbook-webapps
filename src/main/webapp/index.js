@@ -8,4 +8,4 @@ const add = (a, b) => {
 
 const el = document.querySelector('#container');
 
-render(add(40, 2), el);
+render(add(40, 50), el);

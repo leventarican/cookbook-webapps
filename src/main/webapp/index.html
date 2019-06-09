@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Webapp (microprofile) with lit-html</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <foobar-counter message="foobar"></foobar-counter>
-        <script src="app.js" type="module"></script>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>lit-html</title>
+    <!--<script type="module" src="./index.js"></script>-->
+    <script>
+        var xmlhttp;
+        function init() {
+            console.log("calling init()");
+            xmlhttp = new XMLHttpRequest();
+        }
+        function getResults() {
+            console.log("calling getResult()");
+            var url = "http://localhost:8080/webapp0/resources/numbers";
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send(null);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200)
+                        console.log("Success -> " + xmlhttp.responseText);
+                    else
+                        console.log("Error -> " + xmlhttp.responseText);
+                }
+            };
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <div id="container"></div>
+    <button onclick="getResults()">rest</button>
+</body>
+
 </html>
