@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>lit-html</title>
+    <title>webapp </title>
     <!--<script type="module" src="./index.js"></script>-->
     <script>
         var xmlhttp;
@@ -18,9 +18,15 @@
             xmlhttp.send(null);
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4) {
-                    if (xmlhttp.status == 200)
-                        console.log("Success -> " + xmlhttp.responseText);
-                    else
+                    if (xmlhttp.status == 200) {
+                        let response = xmlhttp.responseText
+                        console.log("Success -> " + response);
+                        document.getElementById("container").innerHTML = `
+                        <code>${response}</code>
+                        <h1>${response}</h1>
+                        `;
+                    }
+                    else 
                         console.log("Error -> " + xmlhttp.responseText);
                 }
             };
@@ -29,8 +35,8 @@
 </head>
 
 <body onload="init()">
-    <div id="container"></div>
     <button onclick="getResults()">rest</button>
+    <div id="container"></div>
 </body>
 
 </html>

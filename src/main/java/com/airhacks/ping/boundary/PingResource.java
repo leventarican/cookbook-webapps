@@ -24,7 +24,7 @@ public class PingResource {
 //            Foobar f = new Foobar();
 //            f.foo();
 //        }
-        return this.message + " Jakarta EE with MicroProfile";
+        return this.message + " Jakarta EE with MicroProfile 1.2 - Payara Server 4.1.2.181";
     }
     
     class Foobar{
