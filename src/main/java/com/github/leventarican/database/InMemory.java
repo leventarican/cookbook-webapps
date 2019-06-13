@@ -1,5 +1,6 @@
 package com.github.leventarican.database;
 
+import com.github.leventarican.entity.Developer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,23 +10,28 @@ import java.util.List;
 public class InMemory {
     List<Table> tables = new ArrayList<>();
 
-    @Override
-    public String toString() {
-        
+    // kinda JPA
+    public Developer getDeveloper(Integer did) {
         for (Table table : tables) {
-            
+            for (Row row : table.rows) {
+//                id = row.values.stream().filter(v -> ((String) v.getObject()).equals(did)).findAny().orElse(null);
+                Value<Integer> id = row.values.get(0);
+                if (did.intValue() == id.getObject().intValue()) {
+                    Value<String> language = row.values.get(1);
+                    return new Developer(id.getObject(), language.getObject());
+                }
+            }
         }
-        
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
     
-    void generateData() {
+    public void generateData() {
         generateDevelopers();
     }
     
     void generateDevelopers() {
         Table developers = new Table();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
             switch (i) {
                 case 0: {
                     Row data = new Row();
