@@ -5,19 +5,26 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="websocket.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="websocket.css">
 </head>
 
 <body>
 
     <div id="wrapper">
-        <h1>Java Websocket Home</h1>
-        <p>Welcome to the Java WebSocket Home. Click the Add a device button to start adding devices.</p>
+        <h1>java/js websocket</h1>
+        <p>add a developer</p>
         <br />
         <div id="addDevice">
-            <div class="button"> <a href="#" OnClick="showForm()">Add a device</a> </div>
+            <div class="button"> <a href="#" OnClick="showForm()">Add a developer</a> </div>
             <form id="addDeviceForm">
                 <h3>Add a new device</h3>
+                <!--
+    private int id;
+    private String name;
+    private String status;
+    private String type;
+    private String description;
+                -->
                 <span>Name: <input type="text" name="device_name" id="device_name"></span>
                 <span>Type:
                     <select id="device_type">
@@ -36,7 +43,7 @@
             </form>
         </div>
         <br />
-        <h3>Currently connected devices:</h3>
+        <h3>Currently known developers:</h3>
         <div id="content">
         </div>
     </div>

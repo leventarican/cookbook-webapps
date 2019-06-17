@@ -15,6 +15,10 @@ public class Developer {
         this.id = id;
         this.language = language;
     }
+
+    public Integer getId() {
+        return id;
+    }
     
     public String toJson() {
         return JsonbBuilder.create().toJson(this);
