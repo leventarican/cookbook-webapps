@@ -1,9 +1,9 @@
-# Ignore everything
-*
+# blacklist
+/*
 
-# except
+# whiteliste
 !.gitignore
 !pom.xml
 !README.md
 
-!*/src
+!src/
