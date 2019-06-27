@@ -1,6 +1,8 @@
-.classpath
-.project
-derby.log
-**/derbydb
-**/target
-**/.settings
+# blacklist
+/*
+
+# whiteliste
+!.gitignore
+!pom.xml
+!README.md
+!src/
