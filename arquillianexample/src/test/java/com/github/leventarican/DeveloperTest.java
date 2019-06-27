@@ -29,7 +29,15 @@ public class DeveloperTest {
             .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
         
         // console out the jar content
-        System.out.println(jar.toString());
+        /*
+		/com/
+		/com/github/
+		/com/github/leventarican/
+		/com/github/leventarican/Developer.class
+		/META-INF/
+		/META-INF/beans.xml
+         */
+        System.out.println(jar.toString(true));
         
         return jar;
     }
