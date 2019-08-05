@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sell</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">home</a>
+                <a href="register.html">register</a>
+                <a href="signin.html">signin</a>
+                <a href="sell.html">sell</a>
+                <a href="search.html">search</a>
+            </nav>
+        </header>
+        
+        <code>index</code>
+        
+        <form action="sell" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <th>title:</th>
+                    <td>
+                        <input type="text" name="title" size="40" placeholder="title for item">
+                    </td>
+                </tr>
+                <tr>
+                    <th>description: </th>
+                    <td>
+                        <textarea name="description" cols="100" rows="3" maxlength="256"></textarea>
+                    </td>
+                </tr>                
+                <tr>
+                    <th>price:</th>
+                    <td>
+                        <input type="number" name="price" size="40" placeholder="item price">
+                    </td>
+                </tr>
+                <tr>
+                    <th>photo [file]:</th>
+                    <td>
+                        <input type="file" name="photo">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <input type="reset">
+                        <input type="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
