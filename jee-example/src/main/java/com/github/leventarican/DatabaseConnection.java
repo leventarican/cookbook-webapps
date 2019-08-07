@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.annotation.Resource;
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +17,7 @@ import javax.sql.DataSource;
 
 /**
  * Servlet implementation class DatabaseConnection
+ * http://localhost:8080/jee-example/DatabaseConnection
  * 
  * @author Levent
  */
@@ -23,6 +25,11 @@ import javax.sql.DataSource;
 public class DatabaseConnection extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+//	option 0: lookup
+//	private DataSource ds;
+	
+//	option 1: injection
+	@Resource(name="jdbc/__default") 
 	private DataSource ds;
        
     /**
@@ -42,7 +49,8 @@ public class DatabaseConnection extends HttpServlet {
 		writer.println("<!DOCTYPE html>");
 		writer.println("<html><body>");
 		try {
-			ds = InitialContext.doLookup("jdbc/__default");
+//			option 0: lookup
+//			ds = InitialContext.doLookup("jdbc/__default");
 			Connection con = ds.getConnection();
 			if (con.isValid(10)) {
 				writer.println("<br>connected");
