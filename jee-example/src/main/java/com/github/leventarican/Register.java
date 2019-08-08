@@ -2,6 +2,7 @@ package com.github.leventarican;
 
 import java.io.IOException;
 
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.github.leventarican.control.RegisterApi;
 import com.github.leventarican.model.Customer;
 
 /**
@@ -18,6 +20,9 @@ import com.github.leventarican.model.Customer;
  */
 @WebServlet(name = "Register", urlPatterns = {"/register"})
 public class Register extends HttpServlet {
+	
+	@EJB
+	RegisterApi api;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,6 +44,8 @@ public class Register extends HttpServlet {
         Customer customer = new Customer();
         customer.setMail(mail);
         customer.setPassword(password);
+        
+        api.createAccount(customer);
         
         // HttpSession session = request.getSession();
         ServletContext application = request.getServletContext();
