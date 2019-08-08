@@ -9,7 +9,7 @@ import com.github.leventarican.model.Customer;
 @Stateless
 public class RegisterBean implements RegisterApi {
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "developer")
 	private EntityManager em;
 	
 	@Override
