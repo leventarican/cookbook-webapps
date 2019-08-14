@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>code </title>
+    <script>
+        var xmlhttp;
+        function init() {
+            console.log("calling init()");
+            xmlhttp = new XMLHttpRequest();
+        }
+        function getResults() {
+            console.log("calling getResult()");
+            
+            // TODO: create your REST API and modify URL
+            var url = "http://localhost:8080/jndi-example/api/TODO";
+            
+            xmlhttp.open('GET', url, true);
+            xmlhttp.send(null);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200) {
+                        let response = xmlhttp.responseText
+                        console.log("Success -> " + response);
+                        document.getElementById("container").innerHTML = `
+                        <code>${response}</code>
+                        <h1>${response}</h1>
+                        `;
+                    }
+                    else 
+                        console.log("Error -> " + xmlhttp.responseText);
+                }
+            };
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <button onclick="getResults()">rest</button>
+    <div id="container"></div>
+</body>
+
+</html>

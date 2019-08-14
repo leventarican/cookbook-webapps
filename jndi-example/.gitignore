@@ -1,0 +1,8 @@
+# blacklist
+/*
+
+# whiteliste
+!.gitignore
+!pom.xml
+!README.md
+!src/
