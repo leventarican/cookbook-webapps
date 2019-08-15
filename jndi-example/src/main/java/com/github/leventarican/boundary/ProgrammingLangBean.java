@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 
-@Stateless
+@Stateless(mappedName = "test/ejb/jndi")
 public class ProgrammingLangBean implements ProgrammingLangRemoteBI {
 
 	public static final String[] PROGRAMMING_LANGUAGES = {"Java", "Kotlin", "Cpp", "Python", "JavaScript"};
