@@ -8,6 +8,8 @@ payara5/glassfish/domains/domain1/libpostgresql-42.2.9.jar
 ```
 
 * details under: https://blog.payara.fish/using-postgresql-with-payara-server
+
+__JDBC Connection Pool__
 * localhost:4848 > Resources > JDBC Connection Pools > New
 
 ```
@@ -17,13 +19,15 @@ Database Driver Vendor: Postgresql
 ```
 
 * > Next > (set properties) > Ping (for a test)
-
+* > Additional Properties > Save
 ```
 User: postgres
 Server: localhost
 Password: ""
+Url: jdbc:postgresql://localhost:5432/developer-db
+URL: jdbc:postgresql://localhost:5432/developer-db
 ```
-
+__JDBC Resources__
 * Resources > JDBC > JDBC Resources > New.
 
 ```

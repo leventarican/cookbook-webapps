@@ -1,4 +1,7 @@
 
+# endpoint
+* reachable under: (localhost:8080/postgres-ee/resources/ping)
+
 # Maven
 
 * Maven project was generated with the following command: 
