@@ -1,0 +1,31 @@
+package com.github.leventarican.postrges.dao;
+
+/**
+ * @author Levent
+ */
+public class ProgrammingLanguage {
+    private int id;
+    private String name;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("programming lang: id=%d; name=%s", id, name);
+    }
+    
+}

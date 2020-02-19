@@ -1,7 +1,12 @@
 package com.github.leventarican.postrges;
 
+import com.github.leventarican.postrges.dao.ProgrammingLanguage;
+import com.github.leventarican.postrges.dao.ProgrammingLanguageDao;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * postgres JDBC connection demonstration.
@@ -11,7 +16,7 @@ import java.sql.SQLException;
  */
 public class Main {
     
-    void postgres() {
+    void postgres() throws Exception {
         var url = "jdbc:postgresql://localhost:5432/developer-db";
         var user = "postgres";
         var password = "";
@@ -27,9 +32,18 @@ public class Main {
     }
     
     public static void main(String[] args) {
-        System.out.println("postgres.");
-        
-        var app = new Main();
-        app.postgres();
+        try {
+            System.out.println("postgres.");
+            
+            var app = new Main();
+            
+            ProgrammingLanguageDao dao = new ProgrammingLanguageDao();
+            ProgrammingLanguage pl = dao.read(1);
+            
+            System.out.println("found: " + pl);
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
