@@ -1,2 +1,3 @@
 # CDI 2.0
 * beans, managed beans, ejb's, jft, ...
+* dev environment: Payara Server 5.201, Java 11, Apache NetBeans 11.3
