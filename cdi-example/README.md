@@ -4,3 +4,4 @@
     * start up server in netbeans
     * run the (web-) project of your choice
 * code examples based on book: Pro CDI 2 in Java EE
+* if use an empty beans.xml ensure that it consitsts of 1 empty line. more that 1 empty will cause ERRORs.

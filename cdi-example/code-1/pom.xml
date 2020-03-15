@@ -10,6 +10,13 @@
     </parent>
     
     <artifactId>code-1</artifactId>
-    <name>20: todo</name>
+    <name>20: decorators</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

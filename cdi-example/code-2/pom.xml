@@ -9,16 +9,7 @@
         <version>0.0.1</version>
     </parent>
     
-    <artifactId>code-0</artifactId>
-    <name>10: beans</name>
-    <packaging>war</packaging>
-
-    <dependencies>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+    <artifactId>code-2</artifactId>
+    <name>20: todo</name>
 
 </project>
