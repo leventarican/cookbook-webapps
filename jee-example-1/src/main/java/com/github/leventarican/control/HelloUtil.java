@@ -5,7 +5,9 @@ import java.util.Map;
 import java.util.Random;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
+import javax.ejb.Startup;
 
+@Startup
 @Singleton
 public class HelloUtil {
     
