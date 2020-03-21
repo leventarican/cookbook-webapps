@@ -18,6 +18,13 @@ mvn archetype:generate -DarchetypeGroupId=com.airhacks -DarchetypeArtifactId=jav
 payara5/glassfish/domains/domain1/libpostgresql-42.2.9.jar
 ```
 
+* or add within `asadmin`
+
+```
+asadmin> add-library postgresql-42.2.11.jar
+Command add-library executed successfully.
+```
+
 * details under: https://blog.payara.fish/using-postgresql-with-payara-server
 
 __JDBC Connection Pool__
