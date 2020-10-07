@@ -10,7 +10,8 @@
 ## used quarkus extensions
 * RESTEasy JAX-RS: REST endpoint framework implementing JAX-RS and more
 * RESTEasy Jackson: Jackson serialization support for RESTEasy
-* REST Client Jackson: Enable Jackson serialization for the REST Client
+~~* REST Client: Call REST services~~
+~~* REST Client Jackson: Enable Jackson serialization for the REST Client~~
 
 ## run
 ```
@@ -69,3 +70,6 @@ curl -i -v -H "Accept: application/xml" localhost:8080/developer/code/json-xml
 
 Could not find MessageBodyWriter for response object of type: com.github.leventarican.Developer of media type: application/xml;charset=UTF-8
 ```
+
+## JAX-RS client example
+* check `cookbook` repository: `java > java-lang > com.github.leventarican.client.Rest`
