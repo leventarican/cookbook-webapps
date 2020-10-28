@@ -12,3 +12,16 @@ cd openapi-swaggerui-quickstart
 ```
 * navigate into this directory and launch your application with `mvn quarkus:dev`
 * app will be accessible on `http://localhost:8080`
+* for openapi add respectivly the extension
+```
+mvn quarkus:add-extension -Dextensions="quarkus-smallrye-openapi"
+```
+* now check openapi (yaml) and swagger ui
+```
+curl http://localhost:8080/openapi
+http://localhost:8080/swagger-ui/
+```
+* for enabling swagger ui in prod set this property in your `application.properties`
+```
+quarkus.swagger-ui.always-include=true
+```
